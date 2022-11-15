@@ -29,26 +29,31 @@
         private void InitializeComponent()
         {
             this.gbBookInfo = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tbID = new System.Windows.Forms.TextBox();
-            this.tbISBN = new System.Windows.Forms.TextBox();
-            this.tbTitle = new System.Windows.Forms.TextBox();
-            this.tbAuthor = new System.Windows.Forms.TextBox();
-            this.cbEBook = new System.Windows.Forms.CheckBox();
-            this.gbGenre = new System.Windows.Forms.GroupBox();
-            this.rbFantasy = new System.Windows.Forms.RadioButton();
-            this.rbHorror = new System.Windows.Forms.RadioButton();
-            this.rbRomance = new System.Windows.Forms.RadioButton();
+            this.cbGenre = new System.Windows.Forms.ComboBox();
             this.btnCreateBook = new System.Windows.Forms.Button();
+            this.gbGenre = new System.Windows.Forms.GroupBox();
+            this.rbRomance = new System.Windows.Forms.RadioButton();
+            this.rbHorror = new System.Windows.Forms.RadioButton();
+            this.rbFantasy = new System.Windows.Forms.RadioButton();
+            this.cbEBook = new System.Windows.Forms.CheckBox();
+            this.tbAuthor = new System.Windows.Forms.TextBox();
+            this.tbTitle = new System.Windows.Forms.TextBox();
+            this.tbISBN = new System.Windows.Forms.TextBox();
+            this.tbID = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pbBook = new System.Windows.Forms.PictureBox();
             this.gbBookInfo.SuspendLayout();
             this.gbGenre.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBook)).BeginInit();
             this.SuspendLayout();
             // 
             // gbBookInfo
             // 
+            this.gbBookInfo.Controls.Add(this.pbBook);
+            this.gbBookInfo.Controls.Add(this.cbGenre);
             this.gbBookInfo.Controls.Add(this.btnCreateBook);
             this.gbBookInfo.Controls.Add(this.gbGenre);
             this.gbBookInfo.Controls.Add(this.cbEBook);
@@ -69,79 +74,28 @@
             this.gbBookInfo.TabStop = false;
             this.gbBookInfo.Text = "Book Information:";
             // 
-            // label1
+            // cbGenre
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(49, 89);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 32);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ID";
+            this.cbGenre.FormattingEnabled = true;
+            this.cbGenre.Items.AddRange(new object[] {
+            "Fantasy",
+            "Horror",
+            "Romance",
+            "SciFi"});
+            this.cbGenre.Location = new System.Drawing.Point(335, 460);
+            this.cbGenre.Name = "cbGenre";
+            this.cbGenre.Size = new System.Drawing.Size(242, 40);
+            this.cbGenre.TabIndex = 11;
             // 
-            // label2
+            // btnCreateBook
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(49, 152);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 32);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "ISBN";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(49, 224);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 32);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Title";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(49, 292);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 32);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Author";
-            // 
-            // tbID
-            // 
-            this.tbID.Location = new System.Drawing.Point(154, 82);
-            this.tbID.Name = "tbID";
-            this.tbID.Size = new System.Drawing.Size(126, 39);
-            this.tbID.TabIndex = 4;
-            // 
-            // tbISBN
-            // 
-            this.tbISBN.Location = new System.Drawing.Point(154, 151);
-            this.tbISBN.Name = "tbISBN";
-            this.tbISBN.Size = new System.Drawing.Size(300, 39);
-            this.tbISBN.TabIndex = 5;
-            // 
-            // tbTitle
-            // 
-            this.tbTitle.Location = new System.Drawing.Point(154, 223);
-            this.tbTitle.Name = "tbTitle";
-            this.tbTitle.Size = new System.Drawing.Size(300, 39);
-            this.tbTitle.TabIndex = 6;
-            // 
-            // tbAuthor
-            // 
-            this.tbAuthor.Location = new System.Drawing.Point(154, 291);
-            this.tbAuthor.Name = "tbAuthor";
-            this.tbAuthor.Size = new System.Drawing.Size(300, 39);
-            this.tbAuthor.TabIndex = 7;
-            // 
-            // cbEBook
-            // 
-            this.cbEBook.AutoSize = true;
-            this.cbEBook.Location = new System.Drawing.Point(154, 367);
-            this.cbEBook.Name = "cbEBook";
-            this.cbEBook.Size = new System.Drawing.Size(142, 36);
-            this.cbEBook.TabIndex = 8;
-            this.cbEBook.Text = "is E book";
-            this.cbEBook.UseVisualStyleBackColor = true;
+            this.btnCreateBook.Location = new System.Drawing.Point(49, 735);
+            this.btnCreateBook.Name = "btnCreateBook";
+            this.btnCreateBook.Size = new System.Drawing.Size(175, 46);
+            this.btnCreateBook.TabIndex = 10;
+            this.btnCreateBook.Text = "Create Book";
+            this.btnCreateBook.UseVisualStyleBackColor = true;
+            this.btnCreateBook.Click += new System.EventHandler(this.btnCreateBook_Click);
             // 
             // gbGenre
             // 
@@ -155,16 +109,16 @@
             this.gbGenre.TabStop = false;
             this.gbGenre.Text = "Genre:";
             // 
-            // rbFantasy
+            // rbRomance
             // 
-            this.rbFantasy.AutoSize = true;
-            this.rbFantasy.Location = new System.Drawing.Point(32, 48);
-            this.rbFantasy.Name = "rbFantasy";
-            this.rbFantasy.Size = new System.Drawing.Size(124, 36);
-            this.rbFantasy.TabIndex = 0;
-            this.rbFantasy.TabStop = true;
-            this.rbFantasy.Text = "Fantasy";
-            this.rbFantasy.UseVisualStyleBackColor = true;
+            this.rbRomance.AutoSize = true;
+            this.rbRomance.Location = new System.Drawing.Point(32, 162);
+            this.rbRomance.Name = "rbRomance";
+            this.rbRomance.Size = new System.Drawing.Size(143, 36);
+            this.rbRomance.TabIndex = 2;
+            this.rbRomance.TabStop = true;
+            this.rbRomance.Text = "Romance";
+            this.rbRomance.UseVisualStyleBackColor = true;
             // 
             // rbHorror
             // 
@@ -177,26 +131,100 @@
             this.rbHorror.Text = "Horror";
             this.rbHorror.UseVisualStyleBackColor = true;
             // 
-            // rbRomance
+            // rbFantasy
             // 
-            this.rbRomance.AutoSize = true;
-            this.rbRomance.Location = new System.Drawing.Point(32, 162);
-            this.rbRomance.Name = "rbRomance";
-            this.rbRomance.Size = new System.Drawing.Size(143, 36);
-            this.rbRomance.TabIndex = 2;
-            this.rbRomance.TabStop = true;
-            this.rbRomance.Text = "Romance";
-            this.rbRomance.UseVisualStyleBackColor = true;
+            this.rbFantasy.AutoSize = true;
+            this.rbFantasy.Location = new System.Drawing.Point(32, 48);
+            this.rbFantasy.Name = "rbFantasy";
+            this.rbFantasy.Size = new System.Drawing.Size(124, 36);
+            this.rbFantasy.TabIndex = 0;
+            this.rbFantasy.TabStop = true;
+            this.rbFantasy.Text = "Fantasy";
+            this.rbFantasy.UseVisualStyleBackColor = true;
             // 
-            // btnCreateBook
+            // cbEBook
             // 
-            this.btnCreateBook.Location = new System.Drawing.Point(49, 735);
-            this.btnCreateBook.Name = "btnCreateBook";
-            this.btnCreateBook.Size = new System.Drawing.Size(175, 46);
-            this.btnCreateBook.TabIndex = 10;
-            this.btnCreateBook.Text = "Create Book";
-            this.btnCreateBook.UseVisualStyleBackColor = true;
-            this.btnCreateBook.Click += new System.EventHandler(this.btnCreateBook_Click);
+            this.cbEBook.AutoSize = true;
+            this.cbEBook.Location = new System.Drawing.Point(154, 367);
+            this.cbEBook.Name = "cbEBook";
+            this.cbEBook.Size = new System.Drawing.Size(142, 36);
+            this.cbEBook.TabIndex = 8;
+            this.cbEBook.Text = "is E book";
+            this.cbEBook.UseVisualStyleBackColor = true;
+            // 
+            // tbAuthor
+            // 
+            this.tbAuthor.Location = new System.Drawing.Point(154, 291);
+            this.tbAuthor.Name = "tbAuthor";
+            this.tbAuthor.Size = new System.Drawing.Size(300, 39);
+            this.tbAuthor.TabIndex = 7;
+            // 
+            // tbTitle
+            // 
+            this.tbTitle.Location = new System.Drawing.Point(154, 223);
+            this.tbTitle.Name = "tbTitle";
+            this.tbTitle.Size = new System.Drawing.Size(300, 39);
+            this.tbTitle.TabIndex = 6;
+            // 
+            // tbISBN
+            // 
+            this.tbISBN.Location = new System.Drawing.Point(154, 151);
+            this.tbISBN.Name = "tbISBN";
+            this.tbISBN.Size = new System.Drawing.Size(300, 39);
+            this.tbISBN.TabIndex = 5;
+            // 
+            // tbID
+            // 
+            this.tbID.Location = new System.Drawing.Point(154, 82);
+            this.tbID.Name = "tbID";
+            this.tbID.Size = new System.Drawing.Size(126, 39);
+            this.tbID.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(49, 292);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(87, 32);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Author";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(49, 224);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 32);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Title";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(49, 152);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 32);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "ISBN";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(49, 89);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 32);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "ID";
+            // 
+            // pbBook
+            // 
+            this.pbBook.Image = global::OnGoingProject.Properties.Resources.book_image;
+            this.pbBook.Location = new System.Drawing.Point(337, 525);
+            this.pbBook.Name = "pbBook";
+            this.pbBook.Size = new System.Drawing.Size(254, 290);
+            this.pbBook.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbBook.TabIndex = 12;
+            this.pbBook.TabStop = false;
             // 
             // LibraryMain
             // 
@@ -210,6 +238,7 @@
             this.gbBookInfo.PerformLayout();
             this.gbGenre.ResumeLayout(false);
             this.gbGenre.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBook)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -231,5 +260,7 @@
         private Label label2;
         private Label label1;
         private Button btnCreateBook;
+        private ComboBox cbGenre;
+        private PictureBox pbBook;
     }
 }

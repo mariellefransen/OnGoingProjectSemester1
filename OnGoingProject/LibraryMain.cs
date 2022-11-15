@@ -20,14 +20,15 @@ namespace OnGoingProject
 
             newBook.SetEBook(cbEBook.Checked);
 
-            if (rbFantasy.Checked)
-                genre = "Fantasy";
-            else
-                if (rbHorror.Checked)
-                    genre = "Horror";
-                else
-                    if (rbRomance.Checked)
-                        genre = "Romance";
+            //if (rbFantasy.Checked)
+            //    genre = "Fantasy";
+            //else
+            //    if (rbHorror.Checked)
+            //        genre = "Horror";
+            //    else
+            //        if (rbRomance.Checked)
+            //            genre = "Romance";
+            genre = cbGenre.Text;
             newBook.SetGenre(genre);
 
             // show what we did:
