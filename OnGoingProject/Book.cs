@@ -33,7 +33,7 @@ namespace OnGoingProject
             this.eBook = isEBook;
         }
 
-        public string ToString()
+        public override string  ToString()
         {
             string returnValue = $"{title}, {author} - {genre}";
             if (this.eBook)

@@ -29,12 +29,10 @@
         private void InitializeComponent()
         {
             this.gbBookInfo = new System.Windows.Forms.GroupBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.cbGenre = new System.Windows.Forms.ComboBox();
             this.btnCreateBook = new System.Windows.Forms.Button();
-            this.gbGenre = new System.Windows.Forms.GroupBox();
-            this.rbRomance = new System.Windows.Forms.RadioButton();
-            this.rbHorror = new System.Windows.Forms.RadioButton();
-            this.rbFantasy = new System.Windows.Forms.RadioButton();
             this.cbEBook = new System.Windows.Forms.CheckBox();
             this.tbAuthor = new System.Windows.Forms.TextBox();
             this.tbTitle = new System.Windows.Forms.TextBox();
@@ -44,18 +42,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pbBook = new System.Windows.Forms.PictureBox();
+            this.lbBooks = new System.Windows.Forms.ListBox();
             this.gbBookInfo.SuspendLayout();
-            this.gbGenre.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBook)).BeginInit();
             this.SuspendLayout();
             // 
             // gbBookInfo
             // 
-            this.gbBookInfo.Controls.Add(this.pbBook);
+            this.gbBookInfo.Controls.Add(this.btnUpdate);
+            this.gbBookInfo.Controls.Add(this.label5);
             this.gbBookInfo.Controls.Add(this.cbGenre);
             this.gbBookInfo.Controls.Add(this.btnCreateBook);
-            this.gbBookInfo.Controls.Add(this.gbGenre);
             this.gbBookInfo.Controls.Add(this.cbEBook);
             this.gbBookInfo.Controls.Add(this.tbAuthor);
             this.gbBookInfo.Controls.Add(this.tbTitle);
@@ -74,6 +70,25 @@
             this.gbBookInfo.TabStop = false;
             this.gbBookInfo.Text = "Book Information:";
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(359, 721);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(200, 61);
+            this.btnUpdate.TabIndex = 14;
+            this.btnUpdate.Text = "Update Book";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(49, 367);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(78, 32);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Genre";
+            // 
             // cbGenre
             // 
             this.cbGenre.FormattingEnabled = true;
@@ -82,70 +97,25 @@
             "Horror",
             "Romance",
             "SciFi"});
-            this.cbGenre.Location = new System.Drawing.Point(335, 460);
+            this.cbGenre.Location = new System.Drawing.Point(154, 364);
             this.cbGenre.Name = "cbGenre";
             this.cbGenre.Size = new System.Drawing.Size(242, 40);
             this.cbGenre.TabIndex = 11;
             // 
             // btnCreateBook
             // 
-            this.btnCreateBook.Location = new System.Drawing.Point(49, 735);
+            this.btnCreateBook.Location = new System.Drawing.Point(49, 721);
             this.btnCreateBook.Name = "btnCreateBook";
-            this.btnCreateBook.Size = new System.Drawing.Size(175, 46);
+            this.btnCreateBook.Size = new System.Drawing.Size(200, 61);
             this.btnCreateBook.TabIndex = 10;
             this.btnCreateBook.Text = "Create Book";
             this.btnCreateBook.UseVisualStyleBackColor = true;
             this.btnCreateBook.Click += new System.EventHandler(this.btnCreateBook_Click);
             // 
-            // gbGenre
-            // 
-            this.gbGenre.Controls.Add(this.rbRomance);
-            this.gbGenre.Controls.Add(this.rbHorror);
-            this.gbGenre.Controls.Add(this.rbFantasy);
-            this.gbGenre.Location = new System.Drawing.Point(49, 443);
-            this.gbGenre.Name = "gbGenre";
-            this.gbGenre.Size = new System.Drawing.Size(261, 236);
-            this.gbGenre.TabIndex = 9;
-            this.gbGenre.TabStop = false;
-            this.gbGenre.Text = "Genre:";
-            // 
-            // rbRomance
-            // 
-            this.rbRomance.AutoSize = true;
-            this.rbRomance.Location = new System.Drawing.Point(32, 162);
-            this.rbRomance.Name = "rbRomance";
-            this.rbRomance.Size = new System.Drawing.Size(143, 36);
-            this.rbRomance.TabIndex = 2;
-            this.rbRomance.TabStop = true;
-            this.rbRomance.Text = "Romance";
-            this.rbRomance.UseVisualStyleBackColor = true;
-            // 
-            // rbHorror
-            // 
-            this.rbHorror.AutoSize = true;
-            this.rbHorror.Location = new System.Drawing.Point(32, 105);
-            this.rbHorror.Name = "rbHorror";
-            this.rbHorror.Size = new System.Drawing.Size(114, 36);
-            this.rbHorror.TabIndex = 1;
-            this.rbHorror.TabStop = true;
-            this.rbHorror.Text = "Horror";
-            this.rbHorror.UseVisualStyleBackColor = true;
-            // 
-            // rbFantasy
-            // 
-            this.rbFantasy.AutoSize = true;
-            this.rbFantasy.Location = new System.Drawing.Point(32, 48);
-            this.rbFantasy.Name = "rbFantasy";
-            this.rbFantasy.Size = new System.Drawing.Size(124, 36);
-            this.rbFantasy.TabIndex = 0;
-            this.rbFantasy.TabStop = true;
-            this.rbFantasy.Text = "Fantasy";
-            this.rbFantasy.UseVisualStyleBackColor = true;
-            // 
             // cbEBook
             // 
             this.cbEBook.AutoSize = true;
-            this.cbEBook.Location = new System.Drawing.Point(154, 367);
+            this.cbEBook.Location = new System.Drawing.Point(154, 424);
             this.cbEBook.Name = "cbEBook";
             this.cbEBook.Size = new System.Drawing.Size(142, 36);
             this.cbEBook.TabIndex = 8;
@@ -216,29 +186,27 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ID";
             // 
-            // pbBook
+            // lbBooks
             // 
-            this.pbBook.Image = global::OnGoingProject.Properties.Resources.book_image;
-            this.pbBook.Location = new System.Drawing.Point(337, 525);
-            this.pbBook.Name = "pbBook";
-            this.pbBook.Size = new System.Drawing.Size(254, 290);
-            this.pbBook.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbBook.TabIndex = 12;
-            this.pbBook.TabStop = false;
+            this.lbBooks.FormattingEnabled = true;
+            this.lbBooks.ItemHeight = 32;
+            this.lbBooks.Location = new System.Drawing.Point(29, 42);
+            this.lbBooks.Name = "lbBooks";
+            this.lbBooks.Size = new System.Drawing.Size(578, 740);
+            this.lbBooks.TabIndex = 1;
+            this.lbBooks.SelectedIndexChanged += new System.EventHandler(this.lbBooks_SelectedIndexChanged);
             // 
             // LibraryMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1306, 827);
+            this.Controls.Add(this.lbBooks);
             this.Controls.Add(this.gbBookInfo);
             this.Name = "LibraryMain";
             this.Text = "My Library";
             this.gbBookInfo.ResumeLayout(false);
             this.gbBookInfo.PerformLayout();
-            this.gbGenre.ResumeLayout(false);
-            this.gbGenre.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBook)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -246,10 +214,6 @@
         #endregion
 
         private GroupBox gbBookInfo;
-        private GroupBox gbGenre;
-        private RadioButton rbRomance;
-        private RadioButton rbHorror;
-        private RadioButton rbFantasy;
         private CheckBox cbEBook;
         private TextBox tbAuthor;
         private TextBox tbTitle;
@@ -261,6 +225,8 @@
         private Label label1;
         private Button btnCreateBook;
         private ComboBox cbGenre;
-        private PictureBox pbBook;
+        private ListBox lbBooks;
+        private Label label5;
+        private Button btnUpdate;
     }
 }
