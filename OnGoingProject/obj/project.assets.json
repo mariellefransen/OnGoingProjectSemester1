@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\inGIT\\Semester 1\\Sandbox\\OnGoingProject\\OnGoingProject\\OnGoingProject.csproj",
+      "projectUniqueName": "C:\\inGIT\\Semester 1\\OnGoingProject\\OnGoingProject\\OnGoingProject.csproj",
       "projectName": "OnGoingProject",
-      "projectPath": "C:\\inGIT\\Semester 1\\Sandbox\\OnGoingProject\\OnGoingProject\\OnGoingProject.csproj",
+      "projectPath": "C:\\inGIT\\Semester 1\\OnGoingProject\\OnGoingProject\\OnGoingProject.csproj",
       "packagesPath": "C:\\Users\\Marielle\\.nuget\\packages\\",
-      "outputPath": "C:\\inGIT\\Semester 1\\Sandbox\\OnGoingProject\\OnGoingProject\\obj\\",
+      "outputPath": "C:\\inGIT\\Semester 1\\OnGoingProject\\OnGoingProject\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
