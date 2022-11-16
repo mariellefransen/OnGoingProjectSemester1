@@ -10,16 +10,41 @@ namespace OnGoingProject
     {
         //instance variables / fields
         private int id;
-        private string isbn;
         private string title;
         private string author;
         private string genre;
         private bool eBook = false;
 
-        public void AddBook(int id, string isbn, string title, string author)
+        #region GetMethods
+        public int GetID()
+        {
+            return this.id;
+        }
+
+        public string GetTitle()
+        {
+            return this.title;
+        }
+
+        public string GetAuthor()
+        {
+            return this.author;
+        }
+
+        public string GetGenre()
+        {
+            return this.genre;
+        }
+
+        public bool GetIsEBook()
+        {
+            return this.eBook;
+        }
+        #endregion
+
+        public void SetBook(int id,  string title, string author)
         {
             this.id = id;
-            this.isbn = isbn;
             this.title = title;
             this.author = author;
         }
